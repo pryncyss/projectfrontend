@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Adashboard.css">
+    <!-- Include Font Awesome (You can place this in the head section of your HTML) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-oHkP79FV4pc1zLkYW2CEx02jxoc4urPoqki70flbJw5S5m72s3KkRvZSauXpRk1b" crossorigin="anonymous">
+    <title>Admin Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="index.html" class="navbar-brand">
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>syncEvent</h2>
+        </a>
+
+        <div class="navbar-nav ml-auto" data-toggle="collapse" data-target="#navbarCollapse"></div>
+        <!-- User Dropdown -->
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img src="user-icon.jpg" alt="User Icon" class="user-icon">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="../profile.html">Profile</a>
+                <a class="dropdown-item" href="../settings.html">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../welcome.html">Logout</a>
+            </div>
+        </div>
+    </div>
+    </nav>
+
+
+    <div id="content-container">
+        <h1>Admin Dashboard</h1>
+
+        <!-- Add Officer Form Section -->
+       <!-- Button to trigger modal -->
+       <button id="showAddFormBtn" class="btn btn-primary" data-toggle="modal" data-target="#addOfficerModal">Add Officer</button>
+
+
+<!-- Modal for adding an officer -->
+<div class="modal fade" id="addOfficerModal" tabindex="-1" role="dialog" aria-labelledby="addOfficerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addOfficerModalLabel">Add Officer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addOfficerForm" method="post" action="#" enctype="multipart/form-data">
+                    <!-- Add your form fields here (name, username, email, password) -->
+                    <div>
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" required>
+                    </div>
+
+                <div>
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="fname" required>
+                </div>
+                <div>
+
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="lname" required>
+</div>
+<div>
+
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" required>
+                </div>
+                <div>
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" required>
+
+                </div>
+                <div>
+
+                    <label for="image">Profile Image:</label>
+                    <input type="file" name="image" accept="image/*">
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" form="addOfficerForm" class="btn btn-primary">Add Officer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+      <!-- HTML structure for displaying officer cards -->
+
+      <div id="message"></div>
+<div id="officersList">
+    <h2 style="text-align: center;">List of Officers</h2>
+    <div class="row" id="officersCards"></div>
+</div>
+
+
+                
+            </ul>
+        </div>
+        </div>
+
+  
+    <script  src="admin.js"></script>
+
+ 
+
+    <!-- Bootstrap JS and Popper.js (add them before your closing  tag) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

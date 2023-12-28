@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Officer Dashboard</title>
+    <link rel="stylesheet" href="Odash.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+    <!-- Bootstrap JS (Popper.js and jQuery are required) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+   
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="index.html" class="navbar-brand">
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>syncEvent</h2>
+        </a>
+
+        <div class="navbar-nav ml-auto" data-toggle="collapse" data-target="#navbarCollapse"></div>
+        <!-- User Dropdown -->
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img src="user-icon.jpg" alt="User Icon" class="user-icon">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="../profile.html">Profile</a>
+                <a class="dropdown-item" href="../settings.html">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../welcome.html">Logout</a>
+            </div>
+        </div>
+    </div>
+    </nav>
+
+
+    <div class="container mt-2">
+        <h1>Officer Dashboard</h1>
+
+        <div class="container mt-2">
+            <button id="showCreateEventForm" class="btn btn-primary">Create Event</button>
+        </div>
+        
+        <div>
+            <form id="createEventForm" style="display: none;">
+                <div class="modal-header">
+                    <h1 class="modal-title">Create Event</h1>
+                    <button type="button" class="close" id="closeCreateEventForm">&times;</button>
+                </div>
+                
+                    <div class="form-group">
+                        <label for="eventName">Event Name:</label>
+                        <input type="text" class="form-control" name="eventName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" class="form-control" name="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" class="form-control" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time:</label>
+                        <input type="text" class="form-control" name="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location:</label>
+                        <input type="text" class="form-control" name="location" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="eventType">Event Type:</label>
+                        <select class="form-control" id="eventType" name="eventType"></select>
+                    </div>
+
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+        </div>
+        
+        
+        
+        <div class="modal" id="eventDetailsModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Event Details</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body" id="eventDetailsModalBody">
+                        <!-- Event details will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="eventsList"></div>
+
+
+        
+
+
+            <!-- Event cards will be rendered here -->
+        
+        
+
+        <!-- Modal for Editing Event -->
+<div class="modal" id="editEventModal" tabindex="-1" role="dialog" aria-labelledby="editEventModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editEventModalLabel">Edit Event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" id="editEventName" placeholder="Event Name">
+                <input type="text" class="form-control" id="editEventDescription" placeholder="Description">
+                <input type="date" class="form-control" id="editEventDate" placeholder="Date" onchange="formatDate(this.value)">
+                <input type="text" class="form-control" id="editEventTime" placeholder="Time">
+                <input type="text" class="form-control" id="editEventLocation" placeholder="Location">
+                <!-- Add more input fields for other event details as needed -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveEditedEventBtn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- HTML element to display the list of attendees -->
+<ul id="attendeesList"></ul>
+
+
+<div id="eventTypeContainer"></div>
+
+
+<!-- HTML element to display error messages -->
+<div id="errorMessageElementID"></div>
+
+
+    <script src="Odash.js"></script>
+</body>
+
+</html>

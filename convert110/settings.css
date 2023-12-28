@@ -1,0 +1,65 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styles */
+body {
+    margin: 20px auto;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* Change Password Section styles */
+section {
+    margin-top: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr; /* Create a single column grid */
+    gap: 16px; /* Adjust the gap between form elements */
+    width: 80%;
+    margin: auto; /* Center the form horizontally */
+}
+
+label {
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px; /* Adjusted button height */
+    width: 50%; /* Adjusted button width */
+    border: none;
+    cursor: pointer;
+    margin: auto; /* Center the button */
+    display: block; /* Make the button a block-level element */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    input {
+        width: 100%;
+    }
+}

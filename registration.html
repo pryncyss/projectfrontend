@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+</head>
+
+<body class="antialiased" style="background-image: url('css/img/welcome.jpg'); background-size: cover; background-position: center;">
+    <div class="container register-container">
+        <form id="registrationForm">
+            <h3>User Registration</h3>
+        
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
+        
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
+        
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="org_code">Organization Code:</label>
+            <input type="text" id="org_code" name="org_code" required>
+        
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="registration-success" style="display: none;">
+            <p>Registered Successfully. Please <a href="login.html">login</a>.</p>
+        </div>
+    </div>
+
+
+
+    <script src="js/registration.js"></script>
+
+</body>
+
+</html>

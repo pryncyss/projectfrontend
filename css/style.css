@@ -1,0 +1,94 @@
+body {
+    font-family: 'figtree', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card-img-left {
+    width: 45%;
+    background-color: #ffffff;
+    background-size: cover;
+  }
+
+  #registrationCard {
+    background-color: #f8f9fa;
+    width:400px; 
+    padding:20px;/* Change this to your desired background color */
+}
+
+.login-container, .register-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+label {
+    margin-top: 15px;
+    color: #555;
+}
+
+input {
+    padding: 12px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color:#007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #007bff;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-container label {
+    margin-right: 10px;
+    color: #555;
+}
+
+.checkbox-container .checkbox-input {
+    flex: 1;
+}
+
+
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 80%; /* Adjust the width for smaller screens */
+    }
+}

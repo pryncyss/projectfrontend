@@ -1,0 +1,26 @@
+/* dashboard.css */
+
+body {
+    font-family: 'figtree', sans-serif;
+    background-color: #f8f9fa; /* Light gray background color */
+}
+
+.container {
+    max-width: 600px; /* Set the maximum width of the container */
+    margin: auto; /* Center the container on the page */
+}
+
+h1 {
+    color: #007bff; /* Bootstrap primary color */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary color for buttons */
+    color: #fff; /* Text color for buttons */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+
